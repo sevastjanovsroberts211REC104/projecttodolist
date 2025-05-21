@@ -3,7 +3,7 @@ from openpyxl import Workbook, load_workbook
 username = input("Jūsu vārds ")
 print("Sveiki", username,"!")
 
-
+# 'path' var pierakstīt maršrutu excel failam
 path = r"C:\Users\excel\OneDrive\Documents\projekts python\pieraksti.xlsx"
 
 tasks = {
@@ -14,7 +14,7 @@ tasks = {
 
 def load(filename=path):
     tasks = {}
-    wb=load_workbook(filename)
+    wb=load_workbook(filename) 
     ws=wb.active
     for row in ws.iter_rows(min_row=2, values_only=True):
         task, time = row
@@ -28,7 +28,7 @@ def save_file(filename=path):
     ws.title = "Tasks"
     ws['A1'] = "Uzdevumi"
     ws['B1'] = "Laiks"
-    for row, (task, time) in enumerate(tasks.items(), start=2): #2?
+    for row, (task, time) in enumerate(tasks.items(), start=2): 
         ws[f'A{row}'] = task
         ws[f'B{row}'] = time
     wb.save(filename)
