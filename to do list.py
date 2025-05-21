@@ -66,7 +66,7 @@ def remove_task():
         print("izdzēsts")
     else:
         print("sorry, nav atrasts :)")
-    
+    save_file()
 
 def print_time():
     for i in tasks:
